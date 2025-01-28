@@ -1,0 +1,33 @@
+{
+    "os": "ubuntu",
+    "firewall": {
+      "type": "ufw",
+      "rules": {
+        "tcp_allow": [80, 443],
+        "tcp_deny": [23],
+        "udp_allow": [53],
+        "udp_deny": []
+      }
+    },
+    "users": {
+      "authorized": ["alice", "bob"],
+      "sudo_group": "sudo"
+    },
+    "secure_password_rules": {
+      "use_pam_pwquality": true,
+      "minlen": 12,
+      "difok": 3,
+      "ucredit": -1,
+      "lcredit": -1,
+      "dcredit": -1,
+      "ocredit": -1,
+      "retry": 3
+    },
+    "unapproved_extensions": [".mp3", ".mp4", ".txt", ".doc", ".pdf"],
+    "remove_packages": ["game", "cheat"],
+    "disable_packet_forwarding": true,
+    "update_packages": true,
+    "check_sudoers_permissions": true,
+    "services_to_keep": ["ssh", "cron", "rsyslog"]
+  }
+  
